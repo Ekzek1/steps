@@ -1,0 +1,116 @@
+.steps{
+  border: 1px solid teal;
+  background-color: teal;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+
+/* ===========================Form===================== */
+
+.steps__form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steps__date{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.steps__km{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.steps__button{
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid teal;
+  border-radius: 5px;
+  color:teal;
+  transition: all 0.1s ease;
+}
+
+.steps__button:hover{
+  background-color:teal;
+  border-color: #fff;
+  color:#fff;
+  font-size: 20px;
+}
+
+.steps__input{
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.1s ease;
+}
+
+.steps__input:focus{
+  padding: 10px;
+}
+
+/* =======================Info========================= */
+
+.steps__body{
+
+}
+
+.steps__info{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.steps__items{
+  display: flex;
+  flex-direction: column;
+}
+
+.steps__item{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+
+.steps__actions{
+  display: flex;
+  gap: 15px;
+}
+
+.steps__edit{
+  background-color:transparent;
+  border:none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.steps__remove{
+  background-color:transparent;
+  border:none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.steps__edit::before{
+  content: '\270E';
+  font-size: 20px;
+}
+
+.steps__remove::before{
+  content:'\00D7';
+  font-size: 30px;
+}
+
+.steps__error{
+  color: red;
+  font-size: 18px;
+  padding: 20px;
+}
