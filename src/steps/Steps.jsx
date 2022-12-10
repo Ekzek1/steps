@@ -8,14 +8,20 @@ const Steps = () => {
   const [info, setInfo ] = useState([])
 
   const  infoSteps  = (input) =>  {
-    setInfo((info) => ([...info, input]))
+    let existingDate = info.filter(item => item.date == input.date);
+    if(existingDate.length){
+      existingDate[0].km =  +existingDate[0].km + +input.km;
+      setInfo((info) => ([...info]));
+      return
+    }
+    setInfo((info) => ([...info, input]));
   }
 
   useMemo(() => {
     if(info){
-      let sorted = info.sort((a,b) => a.date.slice(0, 2) - b.date.slice(0, 2) );
-      sorted = info.sort((a,b) => a.date.slice(3, 5) - b.date.slice(3, 5));
-      sorted = info.sort((a,b) => a.date.slice(6, 10) - b.date.slice(6, 10))
+      let sorted = info.sort((a,b) => b.date.slice(0, 2) - a.date.slice(0, 2) );
+      sorted = sorted.sort((a,b) => b.date.slice(3, 5) - a.date.slice(3, 5));
+      sorted = sorted.sort((a,b) => b.date.slice(6, 10) - a.date.slice(6, 10))
       setInfo(sorted)
     }
   },[info])
